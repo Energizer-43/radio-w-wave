@@ -1,0 +1,444 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility .4s ease-in-out, opacity .4s ease-in-out;
+  -webkit-transition: visibility .4s ease-in-out, opacity .4s ease-in-out;
+  -moz-transition: visibility .4s ease-in-out, opacity .4s ease-in-out;
+  -ms-transition: visibility .4s ease-in-out, opacity .4s ease-in-out;
+  -o-transition: visibility .4s ease-in-out, opacity .4s ease-in-out;
+}
+
+.modal.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__box {
+  position: relative;
+  max-width: 824px;
+  z-index: 1;
+  background-color: var(--color-mirage);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: 60px;
+  margin-top: 30px;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transition: transform .8s ease-in-out;
+  -webkit-transition: transform .8s ease-in-out;
+  -moz-transition: transform .8s ease-in-out;
+  -ms-transition: transform .8s ease-in-out;
+  -o-transition: transform .8s ease-in-out;
+}
+
+.modal.open .modal__box {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+
+/* BTN */
+
+.modal-btn-close {
+  max-width: fit-content;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.modal-btn-close circle,
+.modal-btn-close path {
+  transition: stroke .3s ease-in-out;
+  -webkit-transition: stroke .3s ease-in-out;
+  -moz-transition: stroke .3s ease-in-out;
+  -ms-transition: stroke .3s ease-in-out;
+  -o-transition: stroke .3s ease-in-out;
+}
+
+.modal-btn-close:focus-visible circle,
+.modal-btn-close:focus-visible path {
+  stroke: var(--color-melrose);
+}
+
+.modal-btn-close:hover circle,
+.modal-btn-close:hover path {
+  stroke: var(--color-electric-violet);
+}
+
+.modal-btn-close:active circle,
+.modal-btn-close:active path {
+  stroke: var(--color-daisy-bush);
+}
+
+/* TOP */
+
+.modal__top {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-title {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 100%;
+  color: var(--color-white);
+  max-width: fit-content;
+  margin-bottom: 17px;
+}
+
+.modal-descr {
+  font-size: 20px;
+  line-height: 20px;
+  color: var(--color-white);
+  max-width: fit-content;
+}
+
+.modal-link-reg {
+  color: var(--color-electric-violet);
+  position: relative;
+  z-index: 1;
+}
+
+.modal-link-reg::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  background-color: var(--color-melrose);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -ms-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+}
+
+.modal-link-reg::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-electric-violet);
+  transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+  left: 0;
+  bottom: -3px;
+}
+
+.modal-link-reg:focus-visible::before {
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -ms-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+}
+
+.modal-link-reg:focus-visible {
+  outline: none;
+  color: var(--color-mirage);
+  transition: color .3s ease-in-out;
+  -webkit-transition: color .3s ease-in-out;
+  -moz-transition: color .3s ease-in-out;
+  -ms-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
+}
+
+.modal-link-reg:hover::after {
+  width: 100%;
+}
+
+.modal-link-reg:active::after {
+  width: 100%;
+  background-color: var(--color-daisy-bush);
+  transition: background-color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out;
+}
+
+.modal-link-reg:active {
+  color: var(--color-daisy-bush);
+  transition: color .3s ease-in-out;
+  -webkit-transition: color .3s ease-in-out;
+  -moz-transition: color .3s ease-in-out;
+  -ms-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
+}
+
+/* CENTER */
+
+.modal__center {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form {
+  max-width: 526px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.modal-input-log {
+  border: 1px solid var(--color-white);
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  background-color: var(--color-mirage);
+  font-size: 20px;
+  line-height: 20px;
+  color: var(--color-white);
+  width: 100%;
+  padding: 25px 32px 23px 32px;
+  outline: none;
+  transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+}
+
+.modal-input-log::placeholder {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: var(--color-gray-chateau);
+}
+
+.modal-input-log:focus-visible {
+  background-color: var(--color-charade);
+  border-color: var(--color-melrose);
+  transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+}
+
+.modal-input-log:hover {
+  background-color: var(--color-charade);
+  transition: background-color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out;
+}
+
+.modal-input-pass {
+  border: 1px solid var(--color-white);
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  background-color: var(--color-mirage);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: var(--color-white);
+  width: 100%;
+  padding: 25px 32px 23px 32px;
+  outline: none;
+  transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+}
+
+.modal-input-pass::placeholder {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: var(--color-gray-chateau);
+}
+
+.modal-input-pass:focus-visible {
+  background-color: var(--color-charade);
+  border-color: var(--color-melrose);
+  transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+}
+
+.modal-input-pass:hover {
+  background-color: var(--color-charade);
+  transition: background-color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out;
+}
+
+.modal-btn {
+  border: 2px solid var(--color-electric-violet);
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  background-color: var(--color-electric-violet);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: var(--color-white);
+  padding: 22px 52px;
+  max-width: fit-content;
+  transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -webkit-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -moz-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -ms-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -o-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+.modal-btn:focus-visible {
+  border-color: var(--color-daisy-bush);
+  background-color: var(--color-melrose);
+  transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -webkit-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -moz-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -ms-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -o-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+.modal-btn:hover {
+  border-color: var(--color-melrose);
+  background-color: var(--color-melrose);
+  transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -webkit-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -moz-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -ms-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -o-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+.modal-btn:active {
+  border-color: var(--color-daisy-bush);
+  background-color: var(--color-daisy-bush);
+  transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -webkit-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -moz-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -ms-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -o-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+/* BOTTOM */
+
+.modal__bottom {
+  display: flex;
+  flex-direction: column;
+  min-width: 704px;
+  border-top: 1px solid var(--color-gray-chateau);
+  gap: var(--gap);
+}
+
+.modal-text {
+  font-size: 20px;
+  line-height: 20px;
+  color: var(--color-white);
+  max-width: fit-content;
+  padding-top: 30px;
+}
+
+.modal-list {
+  display: flex;
+  gap: 43px;
+  max-width: fit-content;
+}
+
+.modal-item {
+  display: flex;
+  align-items: center;
+}
+
+.modal-link-facebook path {
+  transition: fill .3s ease-in-out;
+  -webkit-transition: fill .3s ease-in-out;
+  -moz-transition: fill .3s ease-in-out;
+  -ms-transition: fill .3s ease-in-out;
+  -o-transition: fill .3s ease-in-out;
+}
+
+.modal-link-vk rect,
+.modal-link-google rect {
+  transition: fill .3s ease-in-out;
+  -webkit-transition: fill .3s ease-in-out;
+  -moz-transition: fill .3s ease-in-out;
+  -ms-transition: fill .3s ease-in-out;
+  -o-transition: fill .3s ease-in-out;
+}
+
+/* FB */
+
+.modal-link-facebook:focus-visible {
+  outline: none;
+}
+
+.modal-link-facebook:focus-visible path {
+  fill: var(--color-white);
+}
+
+.modal-link-facebook:hover path {
+  fill: var(--color-electric-violet);
+}
+
+.modal-link-facebook:active path {
+  fill: var(--color-daisy-bush);
+}
+
+/* VK */
+
+.modal-link-vk:focus-visible {
+  outline: none;
+}
+
+.modal-link-vk:focus-visible rect {
+  fill: var(--color-white);
+}
+
+.modal-link-vk:hover rect {
+  fill: var(--color-electric-violet);
+}
+
+.modal-link-vk:active rect {
+  fill: var(--color-daisy-bush);
+}
+
+/* GOOGLE */
+
+.modal-link-google:focus-visible {
+  outline: none;
+}
+
+.modal-link-google:focus-visible rect {
+  fill: var(--color-white);
+}
+
+.modal-link-google:hover rect {
+  fill: var(--color-electric-violet);
+}
+
+.modal-link-google:active rect {
+  fill: var(--color-daisy-bush);
+}

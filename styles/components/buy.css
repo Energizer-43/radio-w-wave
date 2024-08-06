@@ -1,0 +1,182 @@
+.buy {
+  background-color: var(--color-charade);
+  padding: 94px 0 129px 0;
+}
+
+.buy__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* BLOCK LEFT */
+
+.buy__block-left {
+  display: flex;
+  padding-top: 8px;
+  position: relative;
+}
+
+.block-left-image {
+  display: block;
+}
+
+.block-left-icon {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 160px;
+  background-image: url(../../img/buy-img2-1920.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* BLOCK RIGHT */
+
+.buy__block-right {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.block-right-title {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 100%;
+  color: var(--color-buff);
+  margin-bottom: 19px;
+}
+
+.block-right-image {
+  width: 445px;
+  height: 10px;
+  background-image: url(../../img/buy-img3-1920.png);
+  background-repeat: repeat;
+  background-position: center;
+  margin-bottom: 17px;
+}
+
+.block-right-descr {
+  font-size: 16px;
+  line-height: 180%;
+  color: var(--color-white);
+  margin-bottom: 12px;
+}
+
+.block-right-descr:last-of-type {
+  margin-bottom: 30px;
+}
+
+.block-right-price {
+  display: flex;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 30px;
+  color: var(--color-white);
+  max-width: fit-content;
+  margin-bottom: 30px;
+}
+
+.block-right-btn {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: var(--color-buff);
+  border: 2px solid var(--color-buff);
+  border-radius: 100px;
+  padding: 25px 13.5px;
+  max-width: fit-content;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+  outline: none;
+}
+
+.block-right-btn:focus-visible {
+  background-color: var(--color-tussock);
+  color: var(--color-mirage);
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+.block-right-btn:hover {
+  background-color: var(--color-buff);
+  color: var(--color-mirage);
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+.block-right-svg-path-one,
+.block-right-svg-path-two {
+  transition: fill .3s ease-in-out;
+  -webkit-transition: fill .3s ease-in-out;
+  -moz-transition: fill .3s ease-in-out;
+  -ms-transition: fill .3s ease-in-out;
+  -o-transition: fill .3s ease-in-out;
+}
+
+.block-right-btn:hover .block-right-svg-path-one {
+  fill: var(--color-mirage);
+  transition: fill .3s ease-in-out;
+  -webkit-transition: fill .3s ease-in-out;
+  -moz-transition: fill .3s ease-in-out;
+  -ms-transition: fill .3s ease-in-out;
+  -o-transition: fill .3s ease-in-out;
+}
+
+.block-right-btn:hover .block-right-svg-path-two {
+  fill: var(--color-buff);
+  transition: fill .3s ease-in-out;
+  -webkit-transition: fill .3s ease-in-out;
+  -moz-transition: fill .3s ease-in-out;
+  -ms-transition: fill .3s ease-in-out;
+  -o-transition: fill .3s ease-in-out;
+}
+
+.block-right-btn:active {
+  border-color: var(--color-tussock);
+  background-color: var(--color-tussock);
+  color: var(--color-mirage);
+  transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+.block-right-btn:active .block-right-svg-path-one {
+  fill: var(--color-mirage);
+  transition: fill .3s ease-in-out;
+  -webkit-transition: fill .3s ease-in-out;
+  -moz-transition: fill .3s ease-in-out;
+  -ms-transition: fill .3s ease-in-out;
+  -o-transition: fill .3s ease-in-out;
+}
+
+.block-right-btn:active .block-right-svg-path-two {
+  fill: var(--color-tussock);
+  transition: fill .3s ease-in-out;
+  -webkit-transition: fill .3s ease-in-out;
+  -moz-transition: fill .3s ease-in-out;
+  -ms-transition: fill .3s ease-in-out;
+  -o-transition: fill .3s ease-in-out;
+}
+
+.block-right-svg {
+  margin-right: 4px;
+}

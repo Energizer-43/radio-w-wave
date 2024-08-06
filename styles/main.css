@@ -1,0 +1,45 @@
+/* main */
+@import 'normalize.css';
+@import 'choices.min.css';
+@import 'accordion.min.css';
+@import 'swiper-bundle.min.css';
+@import 'variables.css';
+@import 'fonts.css';
+
+/* components */
+@import 'components/header.css';
+@import 'components/hero.css';
+@import 'components/podcasts.css';
+@import 'components/broadcasts.css';
+@import 'components/guests.css';
+@import 'components/playlists.css';
+@import 'components/buy.css';
+@import 'components/about.css';
+@import 'components/footer.css';
+@import 'components/modal.css';
+
+/* other */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    width: 100%;
+    background-color: var(--color-white);
+    font-family: Muller, sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 45px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}

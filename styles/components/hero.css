@@ -1,0 +1,174 @@
+.hero {
+  padding: 38px 0 40px 0;
+  background-color: var(--color-white);
+}
+
+.hero__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 56px;
+}
+
+.hero__title {
+  font-size: 60px;
+  line-height: 100%;
+  color: var(--color-mirage);
+  max-width: fit-content;
+  margin-bottom: 14px;
+}
+
+.hero__title-span {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.hero__description {
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--color-mirage);
+  max-width: 635px;
+  margin-bottom: 45px;
+}
+
+.hero__link {
+  color: var(--color-electric-violet);
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.hero__link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-electric-violet);
+  transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+  left: 0;
+  bottom: -3px;
+}
+
+.hero__link::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  background-color: var(--color-melrose);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -ms-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+}
+
+.hero__link:focus-visible::before {
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -ms-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+}
+
+.hero__link:focus-visible {
+  outline: none;
+  color: var(--color-white);
+  transition: color .3s ease-in-out;
+  -webkit-transition: color .3s ease-in-out;
+  -moz-transition: color .3s ease-in-out;
+  -ms-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
+}
+
+.hero__link:hover::after {
+  width: 100%;
+}
+
+.hero__link:active::after {
+  width: 100%;
+  background-color: var(--color-daisy-bush);
+  transition: background-color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out;
+}
+
+.hero__link:active {
+  color: var(--color-daisy-bush);
+  transition: color .3s ease-in-out;
+  -webkit-transition: color .3s ease-in-out;
+  -moz-transition: color .3s ease-in-out;
+  -ms-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
+}
+
+.hero__btn {
+  border: 2px solid var(--color-electric-violet);
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  background-color: var(--color-electric-violet);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: var(--color-white);
+  padding: 22px 52px;
+  max-width: fit-content;
+  transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -webkit-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -moz-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -ms-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -o-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+.hero__btn:focus-visible {
+  border-color: var(--color-daisy-bush);
+  background-color: var(--color-melrose);
+  transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -webkit-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -moz-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -ms-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -o-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+.hero__btn:hover {
+  border-color: var(--color-melrose);
+  background-color: var(--color-melrose);
+  transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -webkit-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -moz-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -ms-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -o-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+.hero__btn:active {
+  border-color: var(--color-daisy-bush);
+  background-color: var(--color-daisy-bush);
+  transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -webkit-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -moz-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -ms-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+  -o-transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+.hero__image {
+  background-image: url(../../img/hero-microphone-1920.png);
+  min-width: 350px;
+  min-height: 372px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
